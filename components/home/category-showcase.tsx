@@ -17,7 +17,7 @@ const iconMap: Record<string, React.ElementType> = {
 
 export function CategoryShowcase() {
   return (
-    <section className="py-10 sm:py-16 md:py-20">
+    <section className="py-12 md:py-16 lg:py-20">
       <div className="container-custom">
         <SectionHeader
           title="Shop by Category"
@@ -25,7 +25,7 @@ export function CategoryShowcase() {
           align="center"
         />
 
-        <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 md:grid-cols-3 md:gap-6">
+        <div className="mt-8 grid grid-cols-2 gap-4 md:mt-10 md:grid-cols-3 md:gap-6">
           {categories.map((category, index) => {
             const Icon = iconMap[category.icon || 'home'] || Home;
             return (
@@ -38,25 +38,25 @@ export function CategoryShowcase() {
               >
                 <Link
                   href={`/category/${category.slug}`}
-                  className="group block overflow-hidden rounded-xl border border-[var(--color-gray-200)] bg-white transition-all duration-300 hover:shadow-lg"
+                  className="group block overflow-hidden rounded-xl border border-[var(--color-gray-200)] bg-white transition-all duration-300 hover:shadow-lg active:scale-[0.98]"
                 >
                   {/* Image Placeholder */}
                   <div className="relative aspect-[4/3] bg-gradient-to-br from-[var(--color-primary-50)] to-[var(--color-primary-100)]">
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <Icon className="h-10 w-10 text-[var(--color-primary-300)] transition-transform duration-300 group-hover:scale-110 sm:h-16 sm:w-16" />
+                      <Icon className="h-12 w-12 text-[var(--color-primary-300)] transition-transform duration-300 group-hover:scale-110 md:h-16 md:w-16" />
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                   </div>
 
                   {/* Content */}
-                  <div className="p-3 sm:p-4">
-                    <h3 className="text-sm font-semibold text-[var(--color-gray-900)] group-hover:text-[var(--color-primary-600)] transition-colors sm:text-base">
+                  <div className="p-4">
+                    <h3 className="font-semibold text-[var(--color-gray-900)] group-hover:text-[var(--color-primary-600)] transition-colors">
                       {category.name}
                     </h3>
-                    <p className="mt-1 text-xs text-[var(--color-gray-500)] sm:text-sm">
+                    <p className="mt-1 text-sm text-[var(--color-gray-500)]">
                       {category.productCount} items
                     </p>
-                    <span className="mt-2 hidden items-center gap-1 text-sm font-medium text-[var(--color-primary-600)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:inline-flex">
+                    <span className="mt-2 hidden items-center gap-1 text-sm font-medium text-[var(--color-primary-600)] opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:inline-flex">
                       Shop Now
                       <ArrowRight className="h-4 w-4" />
                     </span>

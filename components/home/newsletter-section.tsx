@@ -26,7 +26,7 @@ export function NewsletterSection() {
   };
 
   return (
-    <section className="gradient-primary py-10 sm:py-16 md:py-20">
+    <section className="gradient-primary py-12 md:py-16 lg:py-20">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -34,47 +34,47 @@ export function NewsletterSection() {
           viewport={{ once: true }}
           className="mx-auto max-w-2xl text-center"
         >
-          <div className="mb-3 inline-flex items-center justify-center rounded-full bg-white/20 p-2 sm:mb-4 sm:p-3">
-            <Mail className="h-5 w-5 text-white sm:h-6 sm:w-6" />
+          <div className="mb-4 inline-flex items-center justify-center rounded-full bg-white/20 p-3">
+            <Mail className="h-6 w-6 text-white" />
           </div>
 
-          <h2 className="text-xl font-bold text-white sm:text-2xl md:text-3xl">
+          <h2 className="text-2xl font-bold text-white md:text-3xl">
             Subscribe to Our Newsletter
           </h2>
-          <p className="mt-2 text-sm text-white/80 sm:mt-3 sm:text-base">
+          <p className="mt-3 text-white/80">
             Get exclusive offers, new arrivals, and insider tips delivered to
             your inbox.
           </p>
 
-          <form onSubmit={handleSubmit} className="mt-6 sm:mt-8">
+          <form onSubmit={handleSubmit} className="mt-8">
             <div className="flex flex-col gap-3 sm:flex-row sm:gap-2">
               <Input
                 type="email"
                 placeholder="Enter your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="h-11 flex-1 bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-white/40 sm:h-12"
+                className="h-12 flex-1 bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-white/40"
                 required
               />
               <Button
                 type="submit"
                 size="lg"
                 isLoading={isSubmitting}
-                className="h-11 bg-white text-[var(--color-primary-600)] hover:bg-white/90 sm:h-12"
+                className="h-12 bg-white text-[var(--color-primary-600)] hover:bg-white/90"
               >
                 {isSuccess ? 'Subscribed!' : 'Subscribe'}
               </Button>
             </div>
           </form>
 
-          <div className="mt-3 flex items-center justify-center gap-2 text-xs text-white/60 sm:mt-4 sm:text-sm">
-            <Lock className="h-3 w-3 sm:h-4 sm:w-4" />
+          <div className="mt-4 flex items-center justify-center gap-2 text-sm text-white/60">
+            <Lock className="h-4 w-4" />
             <span>No spam, unsubscribe anytime</span>
           </div>
 
           {/* Bonus Offer */}
-          <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-xs text-white sm:mt-6 sm:px-4 sm:py-2 sm:text-sm">
-            <Gift className="h-3 w-3 flex-shrink-0 sm:h-4 sm:w-4" />
+          <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm text-white">
+            <Gift className="h-4 w-4 flex-shrink-0" />
             <span>Get 10% off your first order when you subscribe!</span>
           </div>
         </motion.div>

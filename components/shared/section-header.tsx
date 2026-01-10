@@ -29,11 +29,11 @@ export function SectionHeader({
       )}
     >
       <div>
-        <h2 className="text-xl font-bold text-[var(--color-gray-900)] sm:text-2xl md:text-3xl">
+        <h2 className="text-2xl font-bold text-[var(--color-gray-900)] md:text-3xl">
           {title}
         </h2>
         {subtitle && (
-          <p className="mt-1 text-sm text-[var(--color-gray-500)] sm:text-base">{subtitle}</p>
+          <p className="mt-1 text-[var(--color-gray-500)]">{subtitle}</p>
         )}
       </div>
       {viewAllHref && (

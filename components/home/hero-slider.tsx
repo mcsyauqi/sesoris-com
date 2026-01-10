@@ -33,11 +33,11 @@ export function HeroSlider() {
 
   return (
     <section
-      className="relative min-h-[400px] bg-gradient-mesh sm:min-h-[500px] lg:min-h-[700px]"
+      className="relative min-h-[450px] bg-gradient-mesh md:min-h-[550px] lg:min-h-[700px]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="container-custom relative h-full py-8 sm:py-12 lg:py-20">
+      <div className="container-custom relative h-full py-10 md:py-16 lg:py-20">
         <div className="grid h-full gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Content */}
           <AnimatePresence mode="wait">
@@ -53,19 +53,19 @@ export function HeroSlider() {
                 <Gift className="h-5 w-5" />
                 {slide.subtitle}
               </span>
-              <h1 className="text-2xl font-bold text-[var(--color-gray-900)] sm:text-3xl md:text-5xl lg:text-6xl">
+              <h1 className="text-3xl font-bold text-[var(--color-gray-900)] md:text-5xl lg:text-6xl">
                 {slide.title}
               </h1>
-              <p className="mt-3 max-w-lg text-base text-[var(--color-gray-600)] sm:mt-4 sm:text-lg">
+              <p className="mt-4 max-w-lg text-base text-[var(--color-gray-600)] md:text-lg">
                 {slide.description}
               </p>
-              <div className="mt-6 flex flex-wrap gap-3 sm:mt-8 sm:gap-4">
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row md:mt-8">
                 <Link href={slide.ctaPrimary.href}>
-                  <Button size="lg" className="sm:text-base">{slide.ctaPrimary.label}</Button>
+                  <Button size="lg" className="w-full sm:w-auto">{slide.ctaPrimary.label}</Button>
                 </Link>
                 {'ctaSecondary' in slide && slide.ctaSecondary && (
                   <Link href={slide.ctaSecondary.href}>
-                    <Button variant="secondary" size="lg" className="sm:text-base">
+                    <Button variant="secondary" size="lg" className="w-full sm:w-auto">
                       {slide.ctaSecondary.label}
                     </Button>
                   </Link>
@@ -96,19 +96,18 @@ export function HeroSlider() {
           </AnimatePresence>
         </div>
 
-        {/* Navigation */}
-        <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-4 sm:bottom-8">
-          {/* Dots */}
+        {/* Navigation Dots */}
+        <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 items-center gap-4 md:bottom-8">
           <div className="flex gap-2">
             {HERO_SLIDES.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
                 className={cn(
-                  'h-2 rounded-full transition-all duration-300',
+                  'h-2.5 rounded-full transition-all duration-300',
                   index === currentSlide
                     ? 'w-8 bg-[var(--color-primary-600)]'
-                    : 'w-2 bg-[var(--color-gray-300)] hover:bg-[var(--color-gray-400)]'
+                    : 'w-2.5 bg-[var(--color-gray-300)] hover:bg-[var(--color-gray-400)]'
                 )}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -119,17 +118,17 @@ export function HeroSlider() {
         {/* Arrow Navigation */}
         <button
           onClick={prevSlide}
-          className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-lg backdrop-blur-sm transition-all hover:bg-white sm:left-4 sm:p-3"
+          className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2.5 shadow-lg backdrop-blur-sm transition-all hover:bg-white active:scale-95 md:left-4 md:p-3"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
+          <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-lg backdrop-blur-sm transition-all hover:bg-white sm:right-4 sm:p-3"
+          className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2.5 shadow-lg backdrop-blur-sm transition-all hover:bg-white active:scale-95 md:right-4 md:p-3"
           aria-label="Next slide"
         >
-          <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
+          <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
         </button>
       </div>
     </section>
