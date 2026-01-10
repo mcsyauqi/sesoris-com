@@ -43,9 +43,9 @@ export function HeroSlider() {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
               className="flex flex-col justify-center"
             >
@@ -89,8 +89,8 @@ export function HeroSlider() {
                   <Gift className="h-32 w-32 text-[var(--color-primary-300)]" />
                 </div>
                 {/* Decorative Elements */}
-                <div className="absolute -right-4 -top-4 h-24 w-24 rounded-2xl bg-[var(--color-accent-yellow)] opacity-80" />
-                <div className="absolute -bottom-4 -left-4 h-16 w-16 rounded-xl bg-[var(--color-accent-orange)] opacity-80" />
+                <div className="absolute right-4 top-4 h-24 w-24 rounded-2xl bg-[var(--color-accent-yellow)] opacity-80" />
+                <div className="absolute bottom-4 left-4 h-16 w-16 rounded-xl bg-[var(--color-accent-orange)] opacity-80" />
               </div>
             </motion.div>
           </AnimatePresence>

@@ -20,8 +20,8 @@ export function BrandStory() {
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
           {/* Image */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="relative"
           >
@@ -33,7 +33,7 @@ export function BrandStory() {
               <div className="absolute -bottom-4 -right-4 hidden h-32 w-32 rounded-xl bg-[var(--color-accent-yellow)] opacity-80 md:block" />
             </div>
             {/* Floating Card */}
-            <div className="absolute -bottom-6 left-4 rounded-xl bg-white p-4 shadow-xl md:-left-8">
+            <div className="absolute -bottom-6 left-4 rounded-xl bg-white p-4 shadow-xl md:left-0">
               <div className="flex items-center gap-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-primary-100)]">
                   <Leaf className="h-6 w-6 text-[var(--color-primary-600)]" />
@@ -48,8 +48,8 @@ export function BrandStory() {
 
           {/* Content */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="mt-6 lg:mt-0"
           >

@@ -58,7 +58,7 @@ export function ProductCarousel({
           variant="outline"
           size="icon"
           onClick={() => scroll('left')}
-          className="absolute -left-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white shadow-lg md:flex"
+          className="absolute left-2 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white shadow-lg md:flex"
         >
           <ChevronLeft className="h-5 w-5" />
         </Button>
@@ -69,7 +69,7 @@ export function ProductCarousel({
           variant="outline"
           size="icon"
           onClick={() => scroll('right')}
-          className="absolute -right-4 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white shadow-lg md:flex"
+          className="absolute right-2 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-white shadow-lg md:flex"
         >
           <ChevronRight className="h-5 w-5" />
         </Button>
@@ -78,7 +78,7 @@ export function ProductCarousel({
       {/* Products */}
       <div
         ref={scrollRef}
-        className="scrollbar-hide flex gap-4 overflow-x-auto scroll-smooth pb-4 md:gap-6"
+        className="scrollbar-hide flex gap-4 overflow-x-auto scroll-smooth px-1 pb-4 md:gap-6"
       >
         {products.map((product) => (
           <div
