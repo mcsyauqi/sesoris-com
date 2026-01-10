@@ -23,16 +23,16 @@ export function Testimonials() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-16 md:py-20 bg-[var(--color-gray-50)]">
+    <section className="py-10 sm:py-16 md:py-20 bg-[var(--color-gray-50)]">
       <div className="container-custom">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-[var(--color-gray-900)] md:text-3xl">
+          <h2 className="text-xl font-bold text-[var(--color-gray-900)] sm:text-2xl md:text-3xl">
             What Our Customers Say
           </h2>
         </div>
 
         {/* Featured Testimonial */}
-        <div className="relative mt-10 mx-auto max-w-3xl">
+        <div className="relative mt-6 mx-auto max-w-3xl sm:mt-10">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -40,7 +40,7 @@ export function Testimonials() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className="rounded-2xl bg-white p-8 shadow-lg md:p-10"
+              className="rounded-xl bg-white p-5 shadow-lg sm:rounded-2xl sm:p-8 md:p-10"
             >
               {/* Quote Icon */}
               <div className="mb-6 flex justify-center">
@@ -65,7 +65,7 @@ export function Testimonials() {
               </div>
 
               {/* Quote */}
-              <blockquote className="mt-6 text-center text-lg text-[var(--color-gray-700)] md:text-xl">
+              <blockquote className="mt-4 text-center text-base text-[var(--color-gray-700)] sm:mt-6 sm:text-lg md:text-xl">
                 &ldquo;{currentTestimonial.content}&rdquo;
               </blockquote>
 
@@ -137,20 +137,20 @@ export function Testimonials() {
         </div>
 
         {/* Stats */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-center">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-center sm:mt-12 sm:gap-8">
           <div>
-            <p className="text-2xl font-bold text-[var(--color-gray-900)]">4.8</p>
-            <p className="text-sm text-[var(--color-gray-500)]">out of 5</p>
+            <p className="text-xl font-bold text-[var(--color-gray-900)] sm:text-2xl">4.8</p>
+            <p className="text-xs text-[var(--color-gray-500)] sm:text-sm">out of 5</p>
           </div>
-          <div className="h-8 w-px bg-[var(--color-gray-300)]" />
+          <div className="h-6 w-px bg-[var(--color-gray-300)] sm:h-8" />
           <div>
-            <p className="text-2xl font-bold text-[var(--color-gray-900)]">2,547</p>
-            <p className="text-sm text-[var(--color-gray-500)]">reviews</p>
+            <p className="text-xl font-bold text-[var(--color-gray-900)] sm:text-2xl">2,547</p>
+            <p className="text-xs text-[var(--color-gray-500)] sm:text-sm">reviews</p>
           </div>
-          <div className="h-8 w-px bg-[var(--color-gray-300)]" />
+          <div className="h-6 w-px bg-[var(--color-gray-300)] sm:h-8" />
           <div>
-            <p className="text-2xl font-bold text-[var(--color-gray-900)]">98%</p>
-            <p className="text-sm text-[var(--color-gray-500)]">recommend</p>
+            <p className="text-xl font-bold text-[var(--color-gray-900)] sm:text-2xl">98%</p>
+            <p className="text-xs text-[var(--color-gray-500)] sm:text-sm">recommend</p>
           </div>
         </div>
       </div>

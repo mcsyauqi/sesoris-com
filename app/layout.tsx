@@ -1,9 +1,17 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { SITE_CONFIG } from '@/lib/constants';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { AnnouncementBar } from '@/components/layout/announcement-bar';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: '#1B5E3B',
+};
 
 export const metadata: Metadata = {
   title: {

@@ -31,21 +31,21 @@ export function Footer() {
   return (
     <footer className="bg-[var(--color-gray-900)] text-white">
       {/* Main Footer */}
-      <div className="container-custom py-12 md:py-16">
+      <div className="container-custom py-8 sm:py-12 md:py-16">
         {/* Top Section */}
-        <div className="mb-12 text-center">
+        <div className="mb-8 text-center sm:mb-12">
           <Logo variant="full" color="light" className="justify-center" />
-          <p className="mx-auto mt-4 max-w-md text-[var(--color-gray-400)]">
+          <p className="mx-auto mt-3 max-w-md text-sm text-[var(--color-gray-400)] sm:mt-4 sm:text-base">
             Bringing you the best products for everyday life. Quality you can
             trust, prices you&apos;ll love.
           </p>
         </div>
 
         {/* Links Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Shop */}
           <div>
-            <h3 className="mb-4 font-semibold uppercase tracking-wider">
+            <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider sm:mb-4 sm:text-base">
               Shop
             </h3>
             <ul className="space-y-2">
@@ -53,7 +53,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-[var(--color-gray-400)] hover:text-white transition-colors"
+                    className="text-sm text-[var(--color-gray-400)] hover:text-white transition-colors sm:text-base"
                   >
                     {item.label}
                   </Link>
@@ -64,7 +64,7 @@ export function Footer() {
 
           {/* Help */}
           <div>
-            <h3 className="mb-4 font-semibold uppercase tracking-wider">
+            <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider sm:mb-4 sm:text-base">
               Help
             </h3>
             <ul className="space-y-2">
@@ -72,7 +72,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-[var(--color-gray-400)] hover:text-white transition-colors"
+                    className="text-sm text-[var(--color-gray-400)] hover:text-white transition-colors sm:text-base"
                   >
                     {item.label}
                   </Link>
@@ -83,7 +83,7 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="mb-4 font-semibold uppercase tracking-wider">
+            <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider sm:mb-4 sm:text-base">
               Company
             </h3>
             <ul className="space-y-2">
@@ -91,7 +91,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-[var(--color-gray-400)] hover:text-white transition-colors"
+                    className="text-sm text-[var(--color-gray-400)] hover:text-white transition-colors sm:text-base"
                   >
                     {item.label}
                   </Link>
@@ -101,11 +101,11 @@ export function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div>
-            <h3 className="mb-4 font-semibold uppercase tracking-wider">
+          <div className="col-span-2 sm:col-span-1 lg:col-span-1">
+            <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider sm:mb-4 sm:text-base">
               Stay Connected
             </h3>
-            <p className="mb-4 text-sm text-[var(--color-gray-400)]">
+            <p className="mb-3 text-xs text-[var(--color-gray-400)] sm:mb-4 sm:text-sm">
               Subscribe for exclusive offers and updates!
             </p>
             <form onSubmit={handleSubscribe} className="space-y-2">
@@ -172,15 +172,15 @@ export function Footer() {
         </div>
 
         {/* Payment Methods */}
-        <div className="mt-12 border-t border-[var(--color-gray-800)] pt-8">
-          <p className="mb-4 text-center text-sm text-[var(--color-gray-500)]">
+        <div className="mt-8 border-t border-[var(--color-gray-800)] pt-6 sm:mt-12 sm:pt-8">
+          <p className="mb-3 text-center text-xs text-[var(--color-gray-500)] sm:mb-4 sm:text-sm">
             Payment Methods
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4">
             {PAYMENT_METHODS.map((method) => (
               <div
                 key={method}
-                className="flex h-8 w-12 items-center justify-center rounded bg-white/10 text-xs font-semibold uppercase"
+                className="flex h-7 w-10 items-center justify-center rounded bg-white/10 text-[10px] font-semibold uppercase sm:h-8 sm:w-12 sm:text-xs"
               >
                 {method.slice(0, 4)}
               </div>
@@ -191,14 +191,14 @@ export function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-[var(--color-gray-800)]">
-        <div className="container-custom flex flex-col items-center justify-between gap-4 py-6 md:flex-row">
-          <p className="text-sm text-[var(--color-gray-500)]">
+        <div className="container-custom flex flex-col items-center justify-between gap-3 py-4 sm:gap-4 sm:py-6 md:flex-row">
+          <p className="text-xs text-[var(--color-gray-500)] sm:text-sm">
             &copy; {new Date().getFullYear()} {SITE_CONFIG.name}. All rights
             reserved.
           </p>
-          <div className="flex flex-wrap items-center gap-4 text-sm text-[var(--color-gray-500)]">
+          <div className="flex flex-wrap items-center justify-center gap-3 text-xs text-[var(--color-gray-500)] sm:gap-4 sm:text-sm">
             {NAVIGATION.footer.legal.map((item, index) => (
-              <span key={item.href} className="flex items-center gap-4">
+              <span key={item.href} className="flex items-center gap-3 sm:gap-4">
                 <Link href={item.href} className="hover:text-white transition-colors">
                   {item.label}
                 </Link>

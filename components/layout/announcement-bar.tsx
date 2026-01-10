@@ -27,12 +27,12 @@ export function AnnouncementBar() {
 
   return (
     <div className="relative bg-[var(--color-primary-600)] text-white">
-      <div className="container-custom flex h-10 items-center justify-center md:h-11">
+      <div className="container-custom flex min-h-[40px] items-center justify-center py-2 pr-10 md:min-h-[44px] md:py-0">
         <div className="flex items-center gap-2">
-          <Gift className="h-4 w-4 flex-shrink-0" />
+          <Gift className="h-4 w-4 flex-shrink-0 hidden sm:block" />
           <p
             className={cn(
-              'text-sm font-medium transition-all duration-300',
+              'text-xs font-medium transition-all duration-300 text-center sm:text-sm',
               isAnimating ? 'opacity-0 -translate-y-1' : 'opacity-100 translate-y-0'
             )}
           >
@@ -41,7 +41,7 @@ export function AnnouncementBar() {
         </div>
         <button
           onClick={hideAnnouncement}
-          className="absolute right-4 rounded-sm p-1 hover:bg-white/10 transition-colors"
+          className="absolute right-2 rounded-sm p-1 hover:bg-white/10 transition-colors sm:right-4"
           aria-label="Dismiss announcement"
         >
           <X className="h-4 w-4" />

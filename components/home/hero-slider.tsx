@@ -33,11 +33,11 @@ export function HeroSlider() {
 
   return (
     <section
-      className="relative min-h-[600px] bg-gradient-mesh lg:min-h-[700px]"
+      className="relative min-h-[400px] bg-gradient-mesh sm:min-h-[500px] lg:min-h-[700px]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <div className="container-custom relative h-full py-12 lg:py-20">
+      <div className="container-custom relative h-full py-8 sm:py-12 lg:py-20">
         <div className="grid h-full gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Content */}
           <AnimatePresence mode="wait">
@@ -53,19 +53,19 @@ export function HeroSlider() {
                 <Gift className="h-5 w-5" />
                 {slide.subtitle}
               </span>
-              <h1 className="text-4xl font-bold text-[var(--color-gray-900)] md:text-5xl lg:text-6xl">
+              <h1 className="text-2xl font-bold text-[var(--color-gray-900)] sm:text-3xl md:text-5xl lg:text-6xl">
                 {slide.title}
               </h1>
-              <p className="mt-4 max-w-lg text-lg text-[var(--color-gray-600)]">
+              <p className="mt-3 max-w-lg text-base text-[var(--color-gray-600)] sm:mt-4 sm:text-lg">
                 {slide.description}
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
+              <div className="mt-6 flex flex-wrap gap-3 sm:mt-8 sm:gap-4">
                 <Link href={slide.ctaPrimary.href}>
-                  <Button size="xl">{slide.ctaPrimary.label}</Button>
+                  <Button size="lg" className="sm:text-base">{slide.ctaPrimary.label}</Button>
                 </Link>
                 {'ctaSecondary' in slide && slide.ctaSecondary && (
                   <Link href={slide.ctaSecondary.href}>
-                    <Button variant="secondary" size="xl">
+                    <Button variant="secondary" size="lg" className="sm:text-base">
                       {slide.ctaSecondary.label}
                     </Button>
                   </Link>
@@ -97,7 +97,7 @@ export function HeroSlider() {
         </div>
 
         {/* Navigation */}
-        <div className="absolute bottom-8 left-1/2 flex -translate-x-1/2 items-center gap-4">
+        <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-4 sm:bottom-8">
           {/* Dots */}
           <div className="flex gap-2">
             {HERO_SLIDES.map((_, index) => (
@@ -119,17 +119,17 @@ export function HeroSlider() {
         {/* Arrow Navigation */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 hidden -translate-y-1/2 rounded-full bg-white/80 p-3 shadow-lg backdrop-blur-sm transition-all hover:bg-white lg:block"
+          className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-lg backdrop-blur-sm transition-all hover:bg-white sm:left-4 sm:p-3"
           aria-label="Previous slide"
         >
-          <ChevronLeft className="h-6 w-6" />
+          <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 hidden -translate-y-1/2 rounded-full bg-white/80 p-3 shadow-lg backdrop-blur-sm transition-all hover:bg-white lg:block"
+          className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/80 p-2 shadow-lg backdrop-blur-sm transition-all hover:bg-white sm:right-4 sm:p-3"
           aria-label="Next slide"
         >
-          <ChevronRight className="h-6 w-6" />
+          <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
         </button>
       </div>
     </section>
